@@ -1,7 +1,6 @@
 package MeetUps;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 /****
  ***** Created by dairetoner on 21/11/2023
@@ -9,8 +8,6 @@ import java.util.Calendar;
  ****/
 public class Meetup
 {
-
-    private Calendar newCalendar = Calendar.getInstance();
     public static ArrayList<Meetup> storeMeetUps = new ArrayList<Meetup>();
     private String meetupTitle;
     private String meetupLocation;
@@ -22,24 +19,19 @@ public class Meetup
 
    }
 
-    public Meetup(String title, String location, String description, Calendar date_Time, int id)
+    public Meetup(String title, String location, String description, int id)
     {
         meetupTitle = title;
         meetupLocation = location;
         meetupDescription = description;
-        newCalendar = date_Time;
         meetupId = id;
     }
-
-
-
     public Meetup(String title, String description)
     {
         meetupTitle = title;
         meetupDescription = description;
         meetupId++;
     }
-
     public  int getMeetupId() {
         return meetupId;
     }
@@ -47,7 +39,6 @@ public class Meetup
     public  void setMeetupId(int meetupId) {
         meetupId = meetupId;
     }
-
 
     public  String getMeetupTitle()
     {
@@ -62,7 +53,6 @@ public class Meetup
         return meetupDescription;
     }
 
-
     public void setMeetupTitle(String title)
     {
         meetupTitle = title;
@@ -76,21 +66,18 @@ public class Meetup
         meetupDescription = description;
     }
 
-    public void setMeetupTime(Calendar Calendar) {
-        newCalendar = Calendar;
-    }
-    public void PrintAllDetails() {
-        System.out.println("The title is " + meetupTitle);
-        System.out.println("The location is " + meetupLocation);
-        System.out.println("The description is " + meetupDescription);
-    }
-
-
-    public void printMeetUps()
+    protected void PrintAllDetails()
     {
-        for (Meetup howMany: storeMeetUps)
+        for(Meetup storeMeeting: storeMeetUps)
         {
-            System.out.println(meetupId);
-        }
+            String Title = storeMeeting.getMeetupTitle();
+            String location = storeMeeting.getMeetupLocation();
+            String description = storeMeeting.getMeetupDescription();
+
+            System.out.println("Title: " + Title + "\t");
+            System.out.println("Location: " + location +"\t");
+            System.out.println("Description: " + description);
+            System.out.println();
+        }//foreach
     }
-}
+}//class

@@ -1,7 +1,5 @@
 package MeetUps;
 
-import java.util.Calendar;
-
 /****************************************
  Filename: 
  Created by: Dylan Mc Canny 
@@ -10,29 +8,25 @@ import java.util.Calendar;
  ***************************************/
 public class PopulateMeetUps extends Meetup
 {
-
-    public void createNewMeetUp(String meetUpTitle, String meetUpLocation, String meetUpDescription, Calendar meetUPTime,int meetUpId)
+    private void createNewMeetUp(String meetUpTitle, String meetUpLocation, String meetUpDescription,int meetUpId)
     {
         meetUpTitle = getMeetupTitle();
         meetUpLocation = getMeetupLocation();
         meetUpDescription = getMeetupDescription();
         meetUpId = getMeetupId();
 
-        Meetup newMeetUp = new Meetup(meetUpTitle,meetUpDescription,meetUpLocation,meetUPTime, meetUpId);
+        Meetup newMeetUp = new Meetup(meetUpTitle,meetUpLocation,meetUpDescription, meetUpId);
         storeMeetUps.add(newMeetUp);
     }
 
-    public void addMeetups(String title, String Location, String Description, int year, int month, int date, int hourOfDay, int minute, int meetUpID)
+    protected void addMeetups(String title, String Location, String Description, int meetUpID)
     {
         setMeetupTitle(title);
         setMeetupLocation(Location);
         setMeetupDescription(Description);
         setMeetupId(meetUpID);
 
-        Calendar createDateAndTime = Calendar.getInstance();
-
-        createDateAndTime.set(year,month,date,hourOfDay,minute,0);
-        createNewMeetUp(title, Location , Description,createDateAndTime,meetUpID);
+        createNewMeetUp(title, Location , Description, meetUpID);
     }
 
 

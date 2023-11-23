@@ -8,17 +8,22 @@ import java.util.ArrayList;
  ****/
 public class Meetup
 {
-    public static ArrayList<Meetup> storeMeetUps = new ArrayList<Meetup>();
+    //ArrayList to store MeetUp objects
+    protected static ArrayList<Meetup> storeMeetUps = new ArrayList<Meetup>();
+
+    // declaring Instance variables
     private String meetupTitle;
     private String meetupLocation;
     private  String meetupDescription;
-    private  int meetupId = 0;
+    private int meetupId;
 
+    //default constructor
    public Meetup()
    {
 
    }
 
+  // overloaded constructor
     public Meetup(String title, String location, String description, int id)
     {
         meetupTitle = title;
@@ -26,58 +31,58 @@ public class Meetup
         meetupDescription = description;
         meetupId = id;
     }
-    public Meetup(String title, String description)
-    {
-        meetupTitle = title;
-        meetupDescription = description;
-        meetupId++;
-    }
+
+    // getters and setter for meetUpId
     public  int getMeetupId() {
         return meetupId;
     }
-
     public  void setMeetupId(int meetupId) {
-        meetupId = meetupId;
+        this.meetupId = meetupId;
     }
 
-    public  String getMeetupTitle()
+    // getters and setter for meetUpTitle
+    public String getMeetupTitle()
     {
         return meetupTitle;
     }
-
-    public String getMeetupLocation() {
-        return meetupLocation;
-    }
-
-    public String getMeetupDescription() {
-        return meetupDescription;
-    }
-
     public void setMeetupTitle(String title)
     {
         meetupTitle = title;
     }
 
+    // getters and setter for meetUpLocation
+    public String getMeetupLocation() {
+        return meetupLocation;
+    }
     public void setMeetupLocation(String location) {
         meetupLocation = location;
     }
 
+    // getters and setter for meetDescription
+
+    public String getMeetupDescription() {
+        return meetupDescription;
+    }
     public void setMeetupDescription(String description) {
         meetupDescription = description;
     }
 
+
+    //method to print all details stored inside the ListArray
     protected void PrintAllDetails()
     {
-        for(Meetup storeMeeting: storeMeetUps)
+        for(Meetup storedMeetUps: storeMeetUps)
         {
-            String Title = storeMeeting.getMeetupTitle();
-            String location = storeMeeting.getMeetupLocation();
-            String description = storeMeeting.getMeetupDescription();
+            //assigning new variables to get information through the object of storedMeetUp
+            String Title = storedMeetUps.getMeetupTitle();
+            String location = storedMeetUps.getMeetupLocation();
+            String description = storedMeetUps.getMeetupDescription();
 
+            //printing the information stored in storedMeetUp object
             System.out.println("Title: " + Title + "\t");
             System.out.println("Location: " + location +"\t");
             System.out.println("Description: " + description);
             System.out.println();
         }//foreach
-    }
+    }//PrintAllDetails
 }//class

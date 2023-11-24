@@ -46,23 +46,23 @@ public class CreateMeetUps extends Meetup
 
         createNewMeetUp(title, Location , Description, meetUpID);
     }//addMeetups
-    protected void UserCreatedMeetUps()
+    protected void UserCreatedMeetUps(String a, String b, String c)
     {
         //scanner object
         Scanner keyboard = new Scanner(System.in);
 
         //print Statements prompt user for information and assigning them to local variables
-        System.out.println("Title: ");
+        System.out.println(a);
         String UserCreatedTitle = keyboard.nextLine();
 
-        System.out.println("Location: ");
+        System.out.println(b);
         String UserCreatedLocation = keyboard.nextLine();
 
-        System.out.println("Description: ");
+        System.out.println(c);
         String userCreatedDescription= keyboard.nextLine();
 
         // assigning local variable to private variable and incrementing it by 1 to make it unique
-        int userCreatedID =  ID++;
+        int userCreatedID = ID++;
         //setting it to the new Id so there is no overlap of ids created
         setMeetupId(userCreatedID);
 
@@ -72,6 +72,8 @@ public class CreateMeetUps extends Meetup
         storeMeetUps.add(userCreatedMeetUp);
     }//UserCreatedMeetUps
 
-
-
+    protected int ID()
+    {
+        return ID;
+    }
 }

@@ -18,13 +18,13 @@ public class Meetup
     private int meetupId;
 
     //default constructor
-   public Meetup()
-   {
+    protected Meetup()
+    {
 
-   }
+    }
 
-  // overloaded constructor
-    public Meetup(String title, String location, String description, int id)
+     // overloaded constructor
+    protected Meetup(String title, String location, String description, int id)
     {
         meetupTitle = title;
         meetupLocation = location;
@@ -33,37 +33,37 @@ public class Meetup
     }
 
     // getters and setter for meetUpId
-    public  int getMeetupId() {
+    protected   int getMeetupId() {
         return meetupId;
     }
-    public  void setMeetupId(int meetupId) {
+    protected  void setMeetupId(int meetupId) {
         this.meetupId = meetupId;
     }
 
     // getters and setter for meetUpTitle
-    public String getMeetupTitle()
+    protected String getMeetupTitle()
     {
         return meetupTitle;
     }
-    public void setMeetupTitle(String title)
+    protected void setMeetupTitle(String title)
     {
         meetupTitle = title;
     }
 
     // getters and setter for meetUpLocation
-    public String getMeetupLocation() {
+    protected String getMeetupLocation() {
         return meetupLocation;
     }
-    public void setMeetupLocation(String location) {
+    protected void setMeetupLocation(String location) {
         meetupLocation = location;
     }
 
     // getters and setter for meetDescription
 
-    public String getMeetupDescription() {
+    protected String getMeetupDescription() {
         return meetupDescription;
     }
-    public void setMeetupDescription(String description) {
+    protected void setMeetupDescription(String description) {
         meetupDescription = description;
     }
 

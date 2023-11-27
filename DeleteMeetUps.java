@@ -10,6 +10,7 @@ import java.util.Scanner;
  ***************************************/
 public class DeleteMeetUps extends Meetup
 {
+    protected static boolean userInputMatchesId = false;
     protected void deleteCurrentMeetups()
     {
        //iterate through the arrayList and find if the unique id matches
@@ -18,7 +19,7 @@ public class DeleteMeetUps extends Meetup
         Scanner keyboard = new Scanner(System.in);
         int uniqueIdEntered;
         int meetUpPosition = 0;
-        boolean userInputMatchesId = false;
+        //boolean userInputMatchesId = false;
 
         System.out.println("Please enter the unique ID of the MeetUp");
         uniqueIdEntered = keyboard.nextInt();
@@ -31,6 +32,7 @@ public class DeleteMeetUps extends Meetup
             {
                 userInputMatchesId = true;
                 meetUpPosition = storeMeetUps.indexOf(findMeetUps);
+                System.out.println("Your Id was found.\n");
             }
         }
         

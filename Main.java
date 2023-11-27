@@ -21,7 +21,7 @@ public class Main
         System.out.println("2. Create MeetUps");
         System.out.println("3. Update MeetUps");
         System.out.println("4. delete MeetUps");
-        System.out.println("Input any other number to exit");
+        System.out.println("Input numbers 5 - 9 or 0 to Exit");
 
         //return the option chosen by the user
         return keyboard.nextInt();
@@ -44,32 +44,41 @@ public class Main
         String promptMeetingTitle = "Title: ";
         String promptMeetingLocation = "Location: ";
         String promptMeetingDescription = "Description: ";
+        String promptSuccessfulCompletion = "Please take note of your unique ID";
 
         //switch statement invoking the correct function depending on the optionChosen function
         // this looped cannot be stopped. It is for testing purposes only
         while(continueProgram)
         {
-            switch (optionChosen())
+            try
             {
-                case 1:
-                    currentMeetUps.PrintAllDetails();
-                    //printing out all MeetUps/view all
-                    break;
-                case 2:
-                    createMeetUp.UserCreatedMeetUps(promptMeetingTitle,promptMeetingLocation,promptMeetingDescription);
-                    //creating and storing a MeetUp depending on user input
-                    break;
-                case 3:
-                    UpdateInformation.updateMeetupsInformation();
-                    break;
-                case 4:
-                    deleteMeetUp.deleteCurrentMeetups();
-                    break;
-                default:
-                    continueProgram = false;
-                    System.out.println("Thank You");
-                    break;
+                switch (optionChosen())
+                {
+
+                    case 1:
+                        currentMeetUps.PrintAllDetails();
+                        //printing out all MeetUps/view all
+                        break;
+                    case 2:
+                        createMeetUp.UserCreatedMeetUps(promptMeetingTitle, promptMeetingLocation, promptMeetingDescription, promptSuccessfulCompletion);
+                        //creating and storing a MeetUp depending on user input
+                        break;
+                    case 3:
+                        UpdateInformation.updateMeetupsInformation();
+                        break;
+                    case 4:
+                        deleteMeetUp.deleteCurrentMeetups();
+                        break;
+                    default:
+                        continueProgram = false;
+                        System.out.println("Thank You");
+                        break;
+                }
             }//switch
+            catch (Exception e)
+            {
+                System.out.println("Incorrect input. Try Again.");
+            }
         }//while
     }//main
 }//class

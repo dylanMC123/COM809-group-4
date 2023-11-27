@@ -12,23 +12,6 @@ public class CreateMeetUps extends Meetup
 {
     //declaring static ID only in CreateMeetUps class
     private static int ID;
-
-    //createNewMeetUp function with parameters assigned to  getting the information
-    private void createNewMeetUp(String meetUpTitle, String meetUpLocation, String meetUpDescription,int meetUpId)
-    {
-        //getters methods
-        meetUpTitle = getMeetupTitle();
-        meetUpLocation = getMeetupLocation();
-        meetUpDescription = getMeetupDescription();
-        meetUpId = getMeetupId();
-
-        //new instance of MeetUp class with variable inside parameters assigned
-        Meetup newMeetUp = new Meetup(meetUpTitle,meetUpLocation,meetUpDescription, meetUpId);
-
-        //adding this meetup to the ListArray
-        storeMeetUps.add(newMeetUp);
-    }//createNewMeetUp
-
     //function setting the local variable to the parameters of the createNewMeetUp function
     protected void addMeetups(String title, String Location, String Description)
     {
@@ -44,9 +27,13 @@ public class CreateMeetUps extends Meetup
 
         //invoking createNewMeetUp meeting and assigning parameters to local variables
 
-        createNewMeetUp(title, Location , Description, meetUpID);
+        //new instance of MeetUp class with variable inside parameters assigned
+        Meetup newMeetUp = new Meetup(title,Location,Description, meetUpID);
+
+        //adding this meetup to the ListArray
+        storeMeetUps.add(newMeetUp);
     }//addMeetups
-    protected void UserCreatedMeetUps(String a, String b, String c)
+    protected void UserCreatedMeetUps(String a, String b, String c, String d)
     {
         //scanner object
         Scanner keyboard = new Scanner(System.in);
@@ -70,10 +57,9 @@ public class CreateMeetUps extends Meetup
         Meetup userCreatedMeetUp = new Meetup(UserCreatedTitle,UserCreatedLocation,userCreatedDescription,userCreatedID);
         //adding user created meeting to the ArrayList
         storeMeetUps.add(userCreatedMeetUp);
-    }//UserCreatedMeetUps
 
-    protected int ID()
-    {
-        return ID;
-    }
-}
+        System.out.println("\n" + d);
+        System.out.println("MeetUp ID: " + userCreatedID);
+        System.out.println();
+    }//UserCreatedMeetUps
+}//class

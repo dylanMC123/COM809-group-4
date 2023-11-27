@@ -14,8 +14,13 @@ public class UpdateMeetUps extends DeleteMeetUps
         String updatedTitle = "PLease enter the updated Title";
         String updatedLocation = "PLease enter the updated location";
         String updatedDescription = "PLease enter the updated description";
+        String updatedIDMessage = "Your update was successful!\nYour new unique ID is: ";
 
         deleteCurrentMeetups();
-        updatedMeetUp.UserCreatedMeetUps(updatedTitle,updatedLocation,updatedDescription);
+
+        if(userInputMatchesId)
+        {
+            updatedMeetUp.UserCreatedMeetUps(updatedTitle, updatedLocation, updatedDescription, updatedIDMessage);
+        }
     }
 }

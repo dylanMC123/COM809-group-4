@@ -73,12 +73,12 @@ public class Main
                         continueProgram = false;
                         System.out.println("Thank You");
                         break;
-                }
-            }//switch
+                }//switch
+            }//try
             catch (Exception e)
             {
                 System.out.println("Incorrect input. Try Again.");
-            }
+            }//catch
         }//while
     }//main
 }//class

@@ -32,6 +32,7 @@ public class CreateMeetUps extends Meetup
 
         //adding this meetup to the ListArray
         storeMeetUps.add(newMeetUp);
+        StoredID.add(meetUpID);
     }//addMeetups
     protected void UserCreatedMeetUps(String a, String b, String c, String d)
     {
@@ -57,6 +58,7 @@ public class CreateMeetUps extends Meetup
         Meetup userCreatedMeetUp = new Meetup(UserCreatedTitle,UserCreatedLocation,userCreatedDescription,userCreatedID);
         //adding user created meeting to the ArrayList
         storeMeetUps.add(userCreatedMeetUp);
+        StoredID.add(userCreatedID);
 
         System.out.println("\n" + d);
         System.out.println("MeetUp ID: " + userCreatedID);

@@ -10,6 +10,7 @@ public class Meetup
 {
     //ArrayList to store MeetUp objects
     protected static ArrayList<Meetup> storeMeetUps = new ArrayList<Meetup>();
+    protected static ArrayList<Integer> StoredID = new ArrayList<Integer>();
 
     // declaring Instance variables
     private String meetupTitle;

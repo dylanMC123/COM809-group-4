@@ -16,6 +16,8 @@ public class UpdateMeetUps extends DeleteMeetUps
         String updatedDescription = "PLease enter the updated description";
         String updatedIDMessage = "Your update was successful!\nYour new unique ID is: ";
 
+
+        userInputMatchesId = false;
         deleteCurrentMeetups();
 
         if(userInputMatchesId)

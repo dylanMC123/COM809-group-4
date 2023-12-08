@@ -4,45 +4,43 @@ import java.util.ArrayList;
 
 /****************************************
  Filename: 
- Created by: Dylan Mc Canny 
+ Created by: Craig Rea
  Created on: 
  Comment: 
  ***************************************/
 public class BinarySearch
 {
-    // get i want to check if userinput matches any ids with in the array
-    //check if the current position in the arrays id == user input
-    int binarySearch(ArrayList<Integer> binarySearchMeetUp, int userInput)
+    protected int binarySearchForUniqueID(ArrayList<Integer> binarySearchMeetUp, int userInput)
     {
+        //declaring ints  representing the Starting position and total length of the ArrayList
         int startingPosition = 0;
-        int arrayListLength = binarySearchMeetUp.size() + 1;
+        int arrayListLength = binarySearchMeetUp.size();
+
 
         while (startingPosition <= arrayListLength)
         {
-            int mid = startingPosition + (arrayListLength - startingPosition) / 2;
+            // getting the mid point of the arraylist and assigning it to arrayListMidPoint to start the binary search
+            int arrayListMidPoint = startingPosition + (arrayListLength - startingPosition) / 2;
 
-            // Check if x is present at mid
-            if (mid == userInput)
+            //if user input is found in the ArrayList then it returns the array position it was found at
+            if (arrayListMidPoint == userInput)
             {
-                return binarySearchMeetUp.indexOf(mid);
-            }
+                return binarySearchMeetUp.indexOf(arrayListMidPoint);
+            }//if
 
-            // If x greater, ignore left half
-            if (mid  < userInput) {
-                startingPosition = mid + 1;
-            }
-                // If x is smaller, ignore right half
+            //if the arrayListMidPoint is less than the user input it ignores half the array
+            if (arrayListMidPoint  < userInput)
+            {
+                startingPosition = arrayListMidPoint + 1;
+            }//if
+
+            //if the arrayListMidPoint is more than the user input it ignores half the array
             else
             {
-                arrayListLength = mid - 1;
-            }
-        }
-
-
-
-
-        // if we reach here, then element was
-        // not present
+                arrayListLength = arrayListMidPoint - 1;
+            }//else
+        }//while
+        //if it is not found then -1 will be returned
         return -1;
-    }
-}
+    }//binarySearchForUniqueID
+}//class

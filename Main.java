@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /****************************************
  Filename: 
- Created by: Dylan Mc Canny 
+ Created by: daire toner
  Created on: 
  Comment: 
  ***************************************/
@@ -16,12 +16,12 @@ public class Main
         Scanner keyboard = new Scanner(System.in);
 
         //Print statements indicating to user their options and how to access them
-        System.out.println("Please enter a number: ");
+        System.out.println("Input 1 -4 for the necessary functions or to exit any other number:");
         System.out.println("1. View all MeetUps");
         System.out.println("2. Create MeetUps");
         System.out.println("3. Update MeetUps");
         System.out.println("4. delete MeetUps");
-        System.out.println("Input numbers 5 - 9 or 0 to Exit");
+        System.out.println("5. Help");
 
         //return the option chosen by the user
         return keyboard.nextInt();
@@ -36,9 +36,13 @@ public class Main
         DeleteMeetUps deleteMeetUp = new DeleteMeetUps();
         UpdateMeetUps UpdateInformation = new UpdateMeetUps();
 
-        //invoking the add meetups function, to populate the storeMeetUps array
-        createMeetUp.addMeetups("Coding","Ulster University Magee","Learning Java");
-        createMeetUp.addMeetups("Arts","Ulster University Belfast","Learning to draw");
+
+        //string populate date created, once it is placed into the addMeetUps method then it is stored me
+        //allows string to be reused for the next meetUpdate
+        String populateDate = createMeetUp.setDate(2023,12,30,16,0);
+        createMeetUp.addMeetups("Coding","Ulster University Magee","Learning Java", populateDate);
+        populateDate = createMeetUp.setDate(2024,3,9,12,30);
+        createMeetUp.addMeetups("Arts","Ulster University Belfast","Learning to draw",populateDate);
 
         boolean continueProgram = true;
         String promptMeetingTitle = "Title: ";
@@ -50,11 +54,12 @@ public class Main
         // this looped cannot be stopped. It is for testing purposes only
         while(continueProgram)
         {
+            //Try catch to check if any incorrect input is done throughout the application
+            //if any occurs then it bring them back to the home screen with a error message, application doesn't fully close
             try
             {
                 switch (optionChosen())
                 {
-
                     case 1:
                         currentMeetUps.PrintAllDetails();
                         //printing out all MeetUps/view all
@@ -68,6 +73,9 @@ public class Main
                         break;
                     case 4:
                         deleteMeetUp.deleteCurrentMeetups();
+                        break;
+                    case 5:
+                        createMeetUp.helpOption();
                         break;
                     default:
                         continueProgram = false;

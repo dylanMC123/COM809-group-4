@@ -14,18 +14,19 @@ public class BinarySearch
     {
         //declaring ints  representing the Starting position and total length of the ArrayList
         int startingPosition = 0;
-        int arrayListLength = binarySearchMeetUp.size();
+        int arrayListLength = binarySearchMeetUp.size() - 1;
 
 
         while (startingPosition <= arrayListLength)
         {
             // getting the mid point of the arraylist and assigning it to arrayListMidPoint to start the binary search
             int arrayListMidPoint = startingPosition + (arrayListLength - startingPosition) / 2;
+            int getPositionOfId = binarySearchMeetUp.get(arrayListMidPoint);
 
             //if user input is found in the ArrayList then it returns the array position it was found at
-            if (arrayListMidPoint == userInput)
+            if (getPositionOfId == userInput)
             {
-                return binarySearchMeetUp.indexOf(arrayListMidPoint);
+                return binarySearchMeetUp.indexOf(getPositionOfId);
             }//if
 
             //if the arrayListMidPoint is less than the user input it ignores half the array

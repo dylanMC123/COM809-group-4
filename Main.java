@@ -16,7 +16,7 @@ public class Main
         Scanner keyboard = new Scanner(System.in);
 
         //Print statements indicating to user their options and how to access them
-        System.out.println("Input 1 -4 for the necessary functions or to exit any other number:");
+        System.out.println("Input 1 - 5 for the necessary functions or to exit any other number:");
         System.out.println("1. View all MeetUps");
         System.out.println("2. Create MeetUps");
         System.out.println("3. Update MeetUps");
@@ -31,10 +31,10 @@ public class Main
     {
 
         //creating instances of the CreateMeetUps and CurrentMeetUps classes
-        CreateMeetUps createMeetUp = new CreateMeetUps();
+        CreateMeetups createMeetUp = new CreateMeetups();
         Meetup currentMeetUps = new Meetup();
-        DeleteMeetUps deleteMeetUp = new DeleteMeetUps();
-        UpdateMeetUps UpdateInformation = new UpdateMeetUps();
+        DeleteMeetups deleteMeetUp = new DeleteMeetups();
+        UpdateMeetups UpdateInformation = new UpdateMeetups();
 
 
         //string populate date created, once it is placed into the addMeetUps method then it is stored me
@@ -49,6 +49,7 @@ public class Main
         String promptMeetingLocation = "Location: ";
         String promptMeetingDescription = "Description: ";
         String promptSuccessfulCompletion = "Please take note of your unique ID";
+        String deleteEntry = "The entry has been deleted";
 
         //switch statement invoking the correct function depending on the optionChosen function
         // this looped cannot be stopped. It is for testing purposes only
@@ -65,14 +66,14 @@ public class Main
                         //printing out all MeetUps/view all
                         break;
                     case 2:
-                        createMeetUp.UserCreatedMeetUps(promptMeetingTitle, promptMeetingLocation, promptMeetingDescription, promptSuccessfulCompletion);
+                        createMeetUp.userCreatedMeetUps(promptMeetingTitle, promptMeetingLocation, promptMeetingDescription, promptSuccessfulCompletion);
                         //creating and storing a MeetUp depending on user input
                         break;
                     case 3:
                         UpdateInformation.updateMeetupsInformation();
                         break;
                     case 4:
-                        deleteMeetUp.deleteCurrentMeetups();
+                        deleteMeetUp.deleteCurrentMeetups(deleteEntry);
                         break;
                     case 5:
                         createMeetUp.helpOption();

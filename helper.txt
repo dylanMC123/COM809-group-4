@@ -1,0 +1,8 @@
+This is the helper newline
+
+press 1 - this displays all the current meet ups that have been created, this includes the title, description, locationa and date newline
+press 2- this creates a meetup of your own, simply fill all the prompts and people will see your meetup! newline
+press 3 - this updates the meetup, youll need your unique ID do change any details! newline
+press 4 - this will delete any Meetup that you created, again you need your ID! newline
+press 5 - to show this document again newline
+press any other number to exit newline

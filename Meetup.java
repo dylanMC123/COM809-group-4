@@ -15,7 +15,7 @@ public class Meetup
     // declaring Instance variables
     private String meetupTitle;
     private String meetupLocation;
-    private  String meetupDescription;
+    private String meetupDescription;
     private String meetUpDate;
     private int meetupId;
 

@@ -21,12 +21,12 @@ public class BinarySearch
         {
             // getting the mid point of the arraylist and assigning it to arrayListMidPoint to start the binary search
             int arrayListMidPoint = startingPosition + (arrayListLength - startingPosition) / 2;
-            int getPositionOfId = binarySearchMeetUp.get(arrayListMidPoint);
+            int checkMidpointID = binarySearchMeetUp.get(arrayListMidPoint);
 
             //if user input is found in the ArrayList then it returns the array position it was found at
-            if (getPositionOfId == userInput)
+            if (checkMidpointID == userInput)
             {
-                return binarySearchMeetUp.indexOf(getPositionOfId);
+                return binarySearchMeetUp.indexOf(checkMidpointID);
             }//if
 
             //if the arrayListMidPoint is less than the user input it ignores half the array
